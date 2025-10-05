@@ -210,6 +210,11 @@ function webinarRegistrationForm() {
   };
 }
 
+// Register the Alpine.js component
+document.addEventListener("alpine:init", () => {
+  Alpine.data("webinarRegistrationForm", webinarRegistrationForm);
+});
+
 // Utility functions
 document.addEventListener("DOMContentLoaded", function () {
   // Add reCAPTCHA script if needed
@@ -223,23 +228,26 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Add smooth scrolling for form validation errors
-  const form = document.querySelector(".webinar-registration-form");
-  if (form) {
-    form.addEventListener("submit", function (e) {
-      // This is handled by Alpine.js, but we keep this as a fallback
-      if (!form.checkValidity()) {
-        e.preventDefault();
+  const formContainer = document.querySelector(".webinar-registration-form");
+  if (formContainer) {
+    const form = formContainer.querySelector("form");
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        // This is handled by Alpine.js, but we keep this as a fallback
+        if (!form.checkValidity()) {
+          e.preventDefault();
 
-        // Find first error field and scroll to it
-        const firstError = form.querySelector(".error-message");
-        if (firstError) {
-          firstError.scrollIntoView({
-            behavior: "smooth",
-            block: "center",
-          });
+          // Find first error field and scroll to it
+          const firstError = form.querySelector(".error-message");
+          if (firstError) {
+            firstError.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+            });
+          }
         }
-      }
-    });
+      });
+    }
   }
 });
 

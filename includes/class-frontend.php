@@ -135,7 +135,7 @@ class Form_Post_Frontend
     // Start output buffering
     ob_start();
 ?>
-    <div class="webinar-registration-form" x-data="webinarRegistrationForm()">
+    <div class="webinar-registration-form" x-data="webinarRegistrationForm">
       <div class="form-header">
         <h2><?php echo esc_html($atts['title']); ?></h2>
         <p><?php echo esc_html($atts['description']); ?></p>
