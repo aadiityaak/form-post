@@ -1,0 +1,21 @@
+{
+  "name": "form-post-plugin",
+  "version": "1.0.0",
+  "description": "Plugin WordPress untuk formulir pendaftaran webinar dengan database dan manajemen admin",
+  "main": "form-post.php",
+  "scripts": {
+    "build": "node build.js",
+    "zip": "node build.js"
+  },
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "form",
+    "webinar"
+  ],
+  "author": "Websweetstudio.com - Aditya Kristyanto",
+  "license": "GPL-2.0+",
+  "devDependencies": {
+    "archiver": "^5.3.1"
+  }
+}
