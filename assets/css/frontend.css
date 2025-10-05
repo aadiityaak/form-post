@@ -1,0 +1,336 @@
+/* Form Post Plugin - Frontend Styles */
+
+.webinar-registration-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.webinar-registration-form .form-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.webinar-registration-form .form-header h2 {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.webinar-registration-form .form-header p {
+  margin: 0;
+  color: #666;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.webinar-registration-form .form-message {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.webinar-registration-form .form-message.success {
+  background-color: #e7f5e7;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.webinar-registration-form .form-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.webinar-registration-form .form-row {
+  margin-bottom: 20px;
+}
+
+.webinar-registration-form .form-group {
+  position: relative;
+}
+
+.webinar-registration-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.webinar-registration-form input[type="text"],
+.webinar-registration-form input[type="email"],
+.webinar-registration-form input[type="tel"],
+.webinar-registration-form textarea,
+.webinar-registration-form select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 1.5;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.webinar-registration-form input:focus,
+.webinar-registration-form textarea:focus,
+.webinar-registration-form select:focus {
+  outline: none;
+  border-color: #0073aa;
+  box-shadow: 0 0 0 2px rgba(0, 115, 170, 0.2);
+}
+
+.webinar-registration-form input.error,
+.webinar-registration-form textarea.error,
+.webinar-registration-form select.error {
+  border-color: #dc3232;
+  box-shadow: 0 0 0 2px rgba(220, 50, 50, 0.2);
+}
+
+.webinar-registration-form .error-message {
+  display: block;
+  margin-top: 5px;
+  color: #dc3232;
+  font-size: 14px;
+}
+
+.webinar-registration-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.webinar-registration-form .submit-btn {
+  display: block;
+  width: 100%;
+  padding: 14px 20px;
+  background-color: #0073aa;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.webinar-registration-form .submit-btn:hover:not(:disabled) {
+  background-color: #005a87;
+}
+
+.webinar-registration-form .submit-btn:disabled {
+  background-color: #93c4d3;
+  cursor: not-allowed;
+}
+
+/* Captcha */
+.webinar-registration-form .g-recaptcha {
+  margin-bottom: 10px;
+}
+
+/* Loading spinner */
+.webinar-registration-form .loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Form validation states */
+.webinar-registration-form .form-group.has-error input,
+.webinar-registration-form .form-group.has-error textarea,
+.webinar-registration-form .form-group.has-error select {
+  border-color: #dc3232;
+}
+
+.webinar-registration-form .form-group.has-success input,
+.webinar-registration-form .form-group.has-success textarea,
+.webinar-registration-form .form-group.has-success select {
+  border-color: #46b450;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .webinar-registration-form {
+    padding: 20px;
+    margin: 0 15px;
+  }
+
+  .webinar-registration-form .form-header h2 {
+    font-size: 24px;
+  }
+
+  .webinar-registration-form .form-header p {
+    font-size: 14px;
+  }
+
+  .webinar-registration-form input[type="text"],
+  .webinar-registration-form input[type="email"],
+  .webinar-registration-form input[type="tel"],
+  .webinar-registration-form textarea,
+  .webinar-registration-form select {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .webinar-registration-form {
+    background: #2d3748;
+    color: #e2e8f0;
+  }
+
+  .webinar-registration-form .form-header h2 {
+    color: #e2e8f0;
+  }
+
+  .webinar-registration-form .form-header p {
+    color: #a0aec0;
+  }
+
+  .webinar-registration-form label {
+    color: #e2e8f0;
+  }
+
+  .webinar-registration-form input[type="text"],
+  .webinar-registration-form input[type="email"],
+  .webinar-registration-form input[type="tel"],
+  .webinar-registration-form textarea,
+  .webinar-registration-form select {
+    background: #4a5568;
+    border-color: #4a5568;
+    color: #e2e8f0;
+  }
+
+  .webinar-registration-form input:focus,
+  .webinar-registration-form textarea:focus,
+  .webinar-registration-form select:focus {
+    border-color: #63b3ed;
+    box-shadow: 0 0 0 2px rgba(99, 179, 237, 0.2);
+  }
+}
+
+/* Animation for form appearance */
+.webinar-registration-form {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Success animation */
+.webinar-registration-form .success-animation {
+  animation: successPulse 0.6s ease-out;
+}
+
+@keyframes successPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Error shake animation */
+.webinar-registration-form .error-animation {
+  animation: shake 0.5s ease-out;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+/* Custom checkbox and radio styles */
+.webinar-registration-form input[type="checkbox"],
+.webinar-registration-form input[type="radio"] {
+  margin-right: 8px;
+}
+
+/* Progress indicator */
+.webinar-registration-form .progress-indicator {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.webinar-registration-form .progress-indicator::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #e2e8f0;
+  z-index: 1;
+}
+
+.webinar-registration-form .progress-step {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: #e2e8f0;
+  border-radius: 50%;
+  color: #a0aec0;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.webinar-registration-form .progress-step.active {
+  background-color: #0073aa;
+  color: #fff;
+}
+
+.webinar-registration-form .progress-step.completed {
+  background-color: #46b450;
+  color: #fff;
+}

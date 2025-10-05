@@ -1,0 +1,365 @@
+/* Form Post Plugin - Admin Styles */
+
+.webinar-registration-admin {
+  margin: 20px 0;
+}
+
+.webinar-registration-admin .form-header {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ccd0d4;
+  border-bottom: none;
+  border-radius: 3px 3px 0 0;
+}
+
+.webinar-registration-admin .form-header h1 {
+  margin: 0;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.webinar-registration-admin .form-content {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ccd0d4;
+  border-radius: 0 0 3px 3px;
+}
+
+/* Registrations Table */
+.webinar-registrations-table {
+  background: #fff;
+  border: 1px solid #ccd0d4;
+  border-radius: 3px;
+  margin-top: 20px;
+}
+
+.webinar-registrations-table .table-nav {
+  background: #f8f9f9;
+  padding: 15px 20px;
+  border-bottom: 1px solid #ccd0d4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.webinar-registrations-table .filter-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.webinar-registrations-table .filter-form select {
+  margin: 0;
+}
+
+.webinar-registrations-table .bulk-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.webinar-registrations-table .table-wrapper {
+  overflow-x: auto;
+}
+
+.webinar-registrations-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.webinar-registrations-table th {
+  background: #f8f9f9;
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 1px solid #ccd0d4;
+}
+
+.webinar-registrations-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ccd0d4;
+}
+
+.webinar-registrations-table tr:nth-child(even) {
+  background: #f8f9f9;
+}
+
+.webinar-registrations-table .status-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.webinar-registrations-table .status-pending {
+  background: #fef7e0;
+  color: #856404;
+}
+
+.webinar-registrations-table .status-approved {
+  background: #e7f5e7;
+  color: #155724;
+}
+
+.webinar-registrations-table .status-rejected {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.webinar-registrations-table .row-actions {
+  visibility: hidden;
+  padding: 2px 0 0;
+}
+
+.webinar-registrations-table tr:hover .row-actions {
+  visibility: visible;
+}
+
+.webinar-registrations-table .row-actions a {
+  margin-right: 10px;
+  color: #0073aa;
+  text-decoration: none;
+}
+
+.webinar-registrations-table .row-actions a:hover {
+  color: #005a87;
+}
+
+/* Registration Details */
+.registration-details {
+  background: #fff;
+  border: 1px solid #ccd0d4;
+  border-radius: 3px;
+  margin-top: 20px;
+}
+
+.registration-details .details-header {
+  background: #f8f9f9;
+  padding: 15px 20px;
+  border-bottom: 1px solid #ccd0d4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.registration-details .details-content {
+  padding: 20px;
+}
+
+.registration-details .detail-row {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.registration-details .detail-label {
+  font-weight: 600;
+  width: 150px;
+  flex-shrink: 0;
+}
+
+.registration-details .detail-value {
+  flex-grow: 1;
+}
+
+.registration-details .status-select {
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: 1px solid #ccd0d4;
+}
+
+/* Statistics Dashboard */
+.statistics-dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: #fff;
+  border: 1px solid #ccd0d4;
+  border-radius: 3px;
+  padding: 20px;
+  text-align: center;
+}
+
+.stat-card .stat-number {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.stat-card .stat-label {
+  color: #666;
+  font-size: 14px;
+}
+
+.stat-card.total {
+  border-left: 4px solid #0073aa;
+}
+
+.stat-card.pending {
+  border-left: 4px solid #ffb900;
+}
+
+.stat-card.approved {
+  border-left: 4px solid #46b450;
+}
+
+.stat-card.rejected {
+  border-left: 4px solid #dc3232;
+}
+
+/* Settings Page */
+.form-post-settings .form-table th {
+  width: 200px;
+}
+
+.form-post-settings .form-table td {
+  padding: 15px 10px;
+}
+
+.form-post-settings .description {
+  color: #666;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+/* Form Elements */
+.form-post-admin .form-group {
+  margin-bottom: 15px;
+}
+
+.form-post-admin label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.form-post-admin input[type="text"],
+.form-post-admin input[type="email"],
+.form-post-admin select,
+.form-post-admin textarea {
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-post-admin textarea {
+  min-height: 100px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #0073aa;
+  border-color: #0073aa;
+}
+
+.btn-primary:hover {
+  background-color: #005a87;
+  border-color: #005a87;
+}
+
+.btn-secondary {
+  color: #333;
+  background-color: #f8f9f9;
+  border-color: #ccd0d4;
+}
+
+.btn-secondary:hover {
+  background-color: #e9eaeb;
+  border-color: #adb5bd;
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #46b450;
+  border-color: #46b450;
+}
+
+.btn-success:hover {
+  background-color: #3d943f;
+  border-color: #3d943f;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #dc3232;
+  border-color: #dc3232;
+}
+
+.btn-danger:hover {
+  background-color: #ba2121;
+  border-color: #ba2121;
+}
+
+/* Notices */
+.notice {
+  margin: 15px 0;
+  padding: 12px;
+  border-left: 4px solid #000;
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.notice-success {
+  border-left-color: #46b450;
+}
+
+.notice-error {
+  border-left-color: #dc3232;
+}
+
+.notice-warning {
+  border-left-color: #ffb900;
+}
+
+.notice-info {
+  border-left-color: #0073aa;
+}
+
+/* Responsive */
+@media screen and (max-width: 782px) {
+  .statistics-dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .webinar-registrations-table .table-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .webinar-registrations-table .filter-form,
+  .webinar-registrations-table .bulk-actions {
+    width: 100%;
+  }
+
+  .registration-details .detail-row {
+    flex-direction: column;
+  }
+
+  .registration-details .detail-label {
+    width: auto;
+    margin-bottom: 5px;
+  }
+}
