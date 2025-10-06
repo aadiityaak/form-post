@@ -210,6 +210,9 @@ function webinarRegistrationForm() {
   };
 }
 
+// Make the function globally available immediately
+window.webinarRegistrationForm = webinarRegistrationForm;
+
 // Register the Alpine.js component
 document.addEventListener("alpine:init", () => {
   Alpine.data("webinarRegistrationForm", webinarRegistrationForm);
@@ -222,11 +225,7 @@ if (typeof Alpine !== "undefined" && Alpine.version) {
 
 // Additional fallback - check periodically for Alpine
 const checkAlpine = setInterval(() => {
-  if (
-    typeof Alpine !== "undefined" &&
-    Alpine.version &&
-    !Alpine.store("webinarRegistrationForm")
-  ) {
+  if (typeof Alpine !== "undefined" && Alpine.version) {
     Alpine.data("webinarRegistrationForm", webinarRegistrationForm);
     clearInterval(checkAlpine);
   }
@@ -237,8 +236,24 @@ setTimeout(() => {
   clearInterval(checkAlpine);
 }, 5000);
 
-// Make the function globally available as a fallback
-window.webinarRegistrationForm = webinarRegistrationForm;
+// Prevent Alpine store errors from other scripts
+document.addEventListener("alpine:initialized", () => {
+  // Create a safe store accessor that returns an empty object for non-existent stores
+  if (typeof Alpine !== "undefined") {
+    // Override the magic method for accessing stores
+    Alpine.magic("store", () => {
+      return (name) => {
+        const store = Alpine.store(name);
+        return (
+          store || {
+            init: () => {},
+            // Add other common methods that might be called
+          }
+        );
+      };
+    });
+  }
+});
 
 // Utility functions
 document.addEventListener("DOMContentLoaded", function () {

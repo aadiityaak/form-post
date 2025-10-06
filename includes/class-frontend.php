@@ -65,21 +65,21 @@ class Form_Post_Frontend
    */
   public function enqueue_scripts()
   {
-    // Enqueue Alpine.js
-    wp_enqueue_script(
-      'alpine-js',
-      'https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js',
-      array(),
-      '3.0.0',
-      true
-    );
-
-    // Enqueue plugin frontend script with Alpine.js as dependency
+    // Enqueue plugin frontend script first
     wp_enqueue_script(
       $this->plugin_name . '-frontend',
       plugin_dir_url(__FILE__) . '../assets/js/frontend.js',
-      array('jquery', 'alpine-js'),
+      array('jquery'),
       $this->version,
+      true
+    );
+
+    // Enqueue Alpine.js with our script as dependency to ensure proper order
+    wp_enqueue_script(
+      'alpine-js',
+      'https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js',
+      array($this->plugin_name . '-frontend'),
+      '3.0.0',
       true
     );
 
@@ -135,6 +135,14 @@ class Form_Post_Frontend
     // Start output buffering
     ob_start();
 ?>
+    <script>
+      // Ensure the component is available immediately
+      if (typeof window.webinarRegistrationForm === 'function') {
+        document.addEventListener('alpine:init', () => {
+          Alpine.data('webinarRegistrationForm', window.webinarRegistrationForm);
+        });
+      }
+    </script>
     <div class="webinar-registration-form" x-data="webinarRegistrationForm()">
       <div class="form-header">
         <h2><?php echo esc_html($atts['title']); ?></h2>
