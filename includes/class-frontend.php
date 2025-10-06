@@ -91,12 +91,12 @@ class Form_Post_Frontend
         'api_url' => rest_url('form-post/v1'),
         'nonce' => wp_create_nonce('wp_rest'),
         'strings' => array(
-          'submitting' => 'Submitting...',
-          'success' => 'Registration successful! We will contact you soon.',
-          'error' => 'An error occurred. Please try again.',
-          'validation_error' => 'Please fill in all required fields correctly.',
-          'email_error' => 'Please enter a valid email address.',
-          'phone_error' => 'Please enter a valid phone number.'
+          'submitting' => 'Mengirim...',
+          'success' => 'Pendaftaran berhasil! Kami akan menghubungi Anda segera.',
+          'error' => 'Terjadi kesalahan. Silakan coba lagi.',
+          'validation_error' => 'Harap isi semua field yang diperlukan dengan benar.',
+          'email_error' => 'Harap masukkan alamat email yang valid.',
+          'phone_error' => 'Harap masukkan nomor telepon yang valid.'
         )
       )
     );
@@ -123,8 +123,8 @@ class Form_Post_Frontend
   {
     // Default attributes
     $atts = shortcode_atts(array(
-      'title' => 'Webinar Registration',
-      'description' => 'Please fill in the form below to register for our webinar.',
+      'title' => 'Pendaftaran Webinar',
+      'description' => 'Silakan isi formulir di bawah ini untuk mendaftar webinar kami.',
       'show_captcha' => 'true'
     ), $atts, 'webinar_registration_form');
 
@@ -252,8 +252,8 @@ class Form_Post_Frontend
         <div class="form-row">
           <div class="form-group">
             <button type="submit" class="submit-btn" :disabled="isSubmitting">
-              <span x-show="!isSubmitting">Register Now</span>
-              <span x-show="isSubmitting">Submitting...</span>
+              <span x-show="!isSubmitting">Daftar Sekarang</span>
+              <span x-show="isSubmitting">Mengirim...</span>
             </button>
           </div>
         </div>

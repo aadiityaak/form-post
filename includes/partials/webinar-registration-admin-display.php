@@ -108,44 +108,6 @@
         <p>No registrations yet.</p>
       <?php endif; ?>
     </div>
-
-    <div class="plugin-info">
-      <h2>Plugin Information</h2>
-      <div class="info-grid">
-        <div class="info-item">
-          <strong>Plugin Name:</strong> Form Post
-        </div>
-        <div class="info-item">
-          <strong>Version:</strong> <?php echo FORM_POST_VERSION; ?>
-        </div>
-        <div class="info-item">
-          <strong>Author:</strong> Websweetstudio.com - Aditya Kristyanto
-        </div>
-        <div class="info-item">
-          <strong>Database Version:</strong> <?php echo get_option('form_post_db_version', '1.0.0'); ?>
-        </div>
-      </div>
-    </div>
-
-    <div class="help-section">
-      <h2>Help & Support</h2>
-      <div class="help-content">
-        <h3>How to Use</h3>
-        <ol>
-          <li>Configure plugin settings in the <a href="<?php echo admin_url('admin.php?page=webinar-settings'); ?>">Settings page</a></li>
-          <li>Add the shortcode <code>[webinar_registration_form]</code> to any page or post where you want the registration form to appear</li>
-          <li>Manage registrations in the <a href="<?php echo admin_url('admin.php?page=webinar-registrations'); ?>">Registrations page</a></li>
-        </ol>
-
-        <h3>Shortcode Usage</h3>
-        <p>Basic usage: <code>[webinar_registration_form]</code></p>
-        <p>With custom title: <code>[webinar_registration_form title="Custom Title"]</code></p>
-        <p>With custom description: <code>[webinar_registration_form description="Custom description"]</code></p>
-
-        <h3>Support</h3>
-        <p>For support and documentation, visit <a href="https://websweetstudio.com" target="_blank">Websweetstudio.com</a></p>
-      </div>
-    </div>
   </div>
 </div>
 
