@@ -74,11 +74,11 @@ class Form_Post_Frontend
       true
     );
 
-    // Enqueue plugin frontend script
+    // Enqueue plugin frontend script with Alpine.js as dependency
     wp_enqueue_script(
       $this->plugin_name . '-frontend',
       plugin_dir_url(__FILE__) . '../assets/js/frontend.js',
-      array('jquery'),
+      array('jquery', 'alpine-js'),
       $this->version,
       true
     );
@@ -135,7 +135,7 @@ class Form_Post_Frontend
     // Start output buffering
     ob_start();
 ?>
-    <div class="webinar-registration-form" x-data="webinarRegistrationForm">
+    <div class="webinar-registration-form" x-data="webinarRegistrationForm()">
       <div class="form-header">
         <h2><?php echo esc_html($atts['title']); ?></h2>
         <p><?php echo esc_html($atts['description']); ?></p>

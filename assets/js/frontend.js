@@ -215,6 +215,31 @@ document.addEventListener("alpine:init", () => {
   Alpine.data("webinarRegistrationForm", webinarRegistrationForm);
 });
 
+// Fallback registration in case alpine:init already fired
+if (typeof Alpine !== "undefined" && Alpine.version) {
+  Alpine.data("webinarRegistrationForm", webinarRegistrationForm);
+}
+
+// Additional fallback - check periodically for Alpine
+const checkAlpine = setInterval(() => {
+  if (
+    typeof Alpine !== "undefined" &&
+    Alpine.version &&
+    !Alpine.store("webinarRegistrationForm")
+  ) {
+    Alpine.data("webinarRegistrationForm", webinarRegistrationForm);
+    clearInterval(checkAlpine);
+  }
+}, 100);
+
+// Clear the interval after 5 seconds to prevent endless checking
+setTimeout(() => {
+  clearInterval(checkAlpine);
+}, 5000);
+
+// Make the function globally available as a fallback
+window.webinarRegistrationForm = webinarRegistrationForm;
+
 // Utility functions
 document.addEventListener("DOMContentLoaded", function () {
   // Add reCAPTCHA script if needed
